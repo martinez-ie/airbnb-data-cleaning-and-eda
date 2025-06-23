@@ -1,0 +1,25 @@
+# Power BI
+*.pbix.temp
+*.pbit
+*.pbiviz
+*.log
+
+# Python (se usar)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.env
+
+# R (se usar)
+.RData
+.Rhistory
+
+# Dados sensíveis (exemplo - ajuste conforme necessário)
+data/raw/*.csv # Se você não quiser subir dados brutos grandes
+*.log
+
+# Outros arquivos temporários comuns
+*.tmp
+*.swp
+*.bak
