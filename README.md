@@ -1,109 +1,164 @@
-# Dashboard de Análise de Vendas E-commerce
+Airbnb Market Analysis – Rio de Janeiro
+Data Cleaning, Outlier Treatment & Exploratory Data Analysis
+📊 Project Overview
 
-## 📊 Visão Geral do Projeto
+This project focuses on preparing and analyzing Airbnb listing data from Rio de Janeiro with the goal of transforming raw datasets into a structured and model-ready dataset.
 
-Este projeto tem como objetivo principal **desenvolver um dashboard interativo no Power BI** para ajudar o gestor de e-commerce a **aumentar o faturamento e as vendas**. Através da análise de dados quantitativos de vendas, receita, satisfação do cliente e marketing, o dashboard fornecerá insights acionáveis para otimizar campanhas, alocar recursos de forma mais eficiente e identificar novas oportunidades de crescimento.
+The main objective was to apply data cleaning techniques, detect and treat outliers, transform categorical variables, and generate initial exploratory insights about pricing dynamics in the Airbnb market.
 
-A iniciativa visa capacitar o gestor a tomar decisões baseadas em dados, impulsionando o crescimento sustentável do negócio ao focar nos produtos e categorias certas, melhorando a experiência do consumidor e explorando novos mercados.
+This project simulates a real-world data consultancy scenario where structured data preparation is required before any predictive modeling or business analysis.
 
----
+🎯 Objectives & Key Questions
+Business Objectives
 
-## 🎯 Objetivos e Perguntas-Chave
+Prepare a clean and consistent dataset for further modeling.
 
-O dashboard foi construído para responder às seguintes perguntas e atingir os objetivos de negócio:
+Reduce statistical distortion caused by extreme values.
 
-**Objetivos:**
-* Aumentar o faturamento total.
-* Entender a sazonalidade e prever vendas futuras.
-* Identificar produtos e categorias com maior e menor desempenho para otimizar investimentos em marketing.
-* Analisar a satisfação do cliente através de avaliações de produtos.
-* Mapear a localização dos clientes e entender a velocidade de aquisição de novos clientes.
+Understand pricing drivers in the Airbnb market.
 
-**Perguntas-Chave:**
-* Qual o faturamento total e sua evolução mensal?
-* Existe sazonalidade nas vendas? É possível prever vendas futuras?
-* Quais são os produtos e categorias mais/menos vendidos?
-* Como estão as avaliações dos produtos pelos clientes?
-* Onde estão localizados os clientes atuais e como está o ritmo de aquisição de novos clientes?
+Identify patterns related to property characteristics and pricing.
 
----
+Key Questions
 
-## 📈 Métricas e KPIs Principais
+What factors most influence Airbnb pricing?
 
-Para monitorar o desempenho e orientar a tomada de decisão, o dashboard apresenta os seguintes KPIs:
+Does accommodation capacity significantly impact price?
 
-* **Faturamento Total:** Receita bruta acumulada com as vendas.
-* **Faturamento Mensal:** Para análise de tendências e sazonalidade.
-* **Quantidade de Pedidos:** Volume de transações.
-* **Ticket Médio:** Faturamento médio por pedido.
-* **Produtos Mais/Menos Vendidos:** Classificação de produtos por quantidade e faturamento.
-* **Avaliação de Produtos:** Nota média ou percentual de satisfação dos clientes.
-* **Localização dos Clientes:** Distribuição geográfica dos clientes (por estado, cidade ou região).
-* **Novos Clientes por Mês:** Ritmo de aquisição de novos clientes ao longo do tempo.
+How does location affect average price?
 
----
+Do guest ratings influence pricing?
 
-## 🛠️ Ferramentas e Abordagem Técnica
+What is the distribution of prices after outlier treatment?
 
-O processo de construção do dashboard envolveu as seguintes etapas e ferramentas:
+📈 Key Metrics & Analytical Focus
 
-1.  **Coleta e Organização dos Dados:** Os dados foram coletados de um arquivo CSV exportados do sistema de vendas da emperesa ficticia e organizados para análise.
-2.  **Limpeza e Enriquecimento de Dados:** Etapas de tratamento de dados inconsistentes, ausentes e adição de informações relevantes, utilizando o **Power Query** no Power BI Desktop.
-3.  **Modelagem e Análise:** Construção do modelo de dados relacional no Power BI e desenvolvimento de medidas DAX para cálculo dos KPIs.
-4.  **Visualização:** Criação das visualizações interativas e do layout do dashboard no **Power BI Desktop**.
+The project focuses on the following analytical variables:
 
-**Principais Ferramentas:**
-* **Power BI Desktop:** Para ETL (via Power Query), modelagem de dados, criação de medidas DAX e design do dashboard.
+Price (target variable)
 
----
+Accommodation Capacity (accommodates)
 
-## 🚀 Próximos Passos e Impacto no Negócio
+Number of Bedrooms and Bathrooms
 
-Este dashboard representa a primeira fase de uma análise orientada a dados. Os próximos passos incluem:
+Number of Beds
 
-* **Desenvolvimento de novas visualizações e filtros dinâmicos:** Para prover maior flexibilidade ao gestor na exploração dos dados.
-* **Automatização da atualização dos dados:** Garantindo que o dashboard reflita sempre as informações mais recentes sem intervenção manual.
-* **Disponibilização e treinamento ao gestor:** Para que ele possa explorar os dados de forma autônoma e contínua, tirando o máximo proveito da ferramenta.
+Review Scores Rating
 
-A adoção desta abordagem orientada por dados permitirá ao e-commerce:
+Number of Reviews
 
-* **Aumentar o faturamento:** Através de campanhas de marketing e foco em produtos/segmentos de alto retorno.
-* **Reduzir custos:** Ao identificar e descontinuar produtos de baixo desempenho ou problemáticos.
-* **Otimizar o marketing:** Direcionando investimentos de forma mais eficiente para o que realmente gera retorno.
-* **Melhorar a experiência do cliente:** Identificando rapidamente problemas relacionados a produtos ou serviços.
-* **Explorar novos mercados:** Descobrindo regiões com alto potencial de aquisição de novos clientes.
+Room Type
 
----
+Neighbourhood
 
-## 📁 Estrutura do Projeto
+Statistical techniques were applied to:
 
-## 📈 Dashboard (Prévia)
+Validate data integrity
 
-**Atenção:** Adicione uma imagem do seu dashboard aqui! Depois de criar as visualizações no Power BI, tire uma captura de tela e salve-a na pasta `images/`.
+Detect extreme values
 
-![Prévia do Dashboard](images/dashboard_screenshot.png)
+Stabilize price distribution
 
----
+Prepare categorical variables for modeling
 
-## 🚀 Como Usar/Replicar
+🛠️ Technical Approach & Methodology
+1️⃣ Data Collection & Integration
 
-1.  Clone este repositório para sua máquina local:
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio-dashboard.git](https://github.com/seu-usuario/seu-repositorio-dashboard.git)
-    ```
-    (Substitua `seu-usuario` e `seu-repositorio-dashboard` pelos valores reais do seu repositório no GitHub).
-2.  Navegue até o diretório do projeto:
-    ```bash
-    cd "Dashboard Power BI - Aumento de faturamento e vendas"
-    ```
-3.  Abra o arquivo `.pbix` localizado em `pbix/seu_dashboard.pbix` usando o Power BI Desktop.
-4.  [**OPCIONAL: Instruções de Dados** Se os dados não estiverem no repositório (por serem grandes ou sensíveis), explique como obtê-los e carregá-los no Power BI.]
-5.  Clique em `Atualizar` no Power BI Desktop para garantir que os dados estejam carregados corretamente.
+Two datasets were merged:
 
----
+Listings dataset (property characteristics)
 
-## 🤝 Contribuições
+Reviews dataset (guest evaluation metrics)
 
-Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir uma issue para discutir novas funcionalidades ou melhorias, ou enviar um Pull Request.
+An inner join was performed using the property ID to ensure consistency across records.
 
----
+2️⃣ Data Validation & Missing Values
+
+Verified dataset integrity using df.isnull().sum()
+
+Confirmed absence of missing values
+
+Validated data types using df.info()
+
+3️⃣ Outlier Detection & Treatment
+
+The price variable showed strong right-skewness and extreme values.
+
+To stabilize the dataset:
+
+Generated boxplots for visual inspection
+
+Applied the Interquartile Range (IQR) method
+
+Defined lower and upper acceptable bounds
+
+Removed values outside statistical limits
+
+This step reduced dispersion and improved suitability for modeling.
+
+4️⃣ Categorical Variable Encoding
+
+Categorical features were transformed using:
+
+.astype('category').cat.codes
+
+
+Encoded variables:
+
+room_type
+
+neighbourhood_cleansed
+
+This transformation allows integration into regression or machine learning models.
+
+5️⃣ Final Dataset Validation
+
+After preprocessing:
+
+No missing values remain
+
+Outliers were treated
+
+Categorical variables encoded
+
+Dataset ready for exploratory analysis and modeling
+
+📊 Key Insights
+
+Entire home listings show significantly higher average prices.
+
+Location plays a strong role in price variability.
+
+Accommodation capacity positively correlates with price.
+
+Review scores show moderate correlation compared to structural features.
+
+Outlier removal reduced price variance and improved distribution symmetry.
+
+🧠 Skills Demonstrated
+
+Data Cleaning
+
+Data Merging
+
+Exploratory Data Analysis (EDA)
+
+Outlier Detection (IQR Method)
+
+Feature Engineering
+
+Categorical Encoding
+
+Statistical Interpretation
+
+🛠️ Tools & Technologies
+
+Python
+
+Pandas
+
+NumPy
+
+Matplotlib
+
+Jupyter Notebook
