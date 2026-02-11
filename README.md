@@ -1,164 +1,150 @@
-Airbnb Market Analysis – Rio de Janeiro
-Data Cleaning, Outlier Treatment & Exploratory Data Analysis
-📊 Project Overview
+# 🏠 Airbnb Data Cleaning and EDA — Rio de Janeiro
 
-This project focuses on preparing and analyzing Airbnb listing data from Rio de Janeiro with the goal of transforming raw datasets into a structured and model-ready dataset.
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](#)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green.svg)](#)
+[![Status](https://img.shields.io/badge/Status-Completed-brightgreen.svg)](#)
 
-The main objective was to apply data cleaning techniques, detect and treat outliers, transform categorical variables, and generate initial exploratory insights about pricing dynamics in the Airbnb market.
+---
 
-This project simulates a real-world data consultancy scenario where structured data preparation is required before any predictive modeling or business analysis.
+## 📊 Project Overview
 
-🎯 Objectives & Key Questions
-Business Objectives
+This project focuses on cleaning, transforming, and analyzing Airbnb listing data from Rio de Janeiro.
 
-Prepare a clean and consistent dataset for further modeling.
+The main objective was to transform raw datasets into a **clean, structured, and model-ready dataset**, applying best practices in:
 
-Reduce statistical distortion caused by extreme values.
+- Data validation
+- Outlier detection
+- Feature transformation
+- Exploratory Data Analysis (EDA)
 
-Understand pricing drivers in the Airbnb market.
+This project simulates a real-world data preparation workflow required before predictive modeling.
 
-Identify patterns related to property characteristics and pricing.
+---
 
-Key Questions
+## 🎯 Objectives & Key Questions
 
-What factors most influence Airbnb pricing?
+### Objectives
 
-Does accommodation capacity significantly impact price?
+- Merge multiple datasets into a consolidated analysis base.
+- Validate dataset integrity and confirm absence of missing values.
+- Detect and remove price outliers using the IQR method.
+- Convert categorical variables into numerical representations.
+- Prepare the dataset for future modeling tasks.
 
-How does location affect average price?
+### Key Questions
 
-Do guest ratings influence pricing?
+- What factors most influence Airbnb pricing?
+- Does location significantly affect price?
+- Is accommodation capacity correlated with price?
+- How do ratings relate to pricing?
+- How does price distribution change after outlier removal?
 
-What is the distribution of prices after outlier treatment?
+---
 
-📈 Key Metrics & Analytical Focus
+## 🧾 Dataset Description
 
-The project focuses on the following analytical variables:
+The project combines two datasets:
 
-Price (target variable)
+### Listings Dataset (`listings_cleaned.csv`)
+Contains property-level information:
 
-Accommodation Capacity (accommodates)
+- `id` — Unique property identifier  
+- `neighbourhood_cleansed` — Location  
+- `room_type` — Accommodation type  
+- `accommodates` — Guest capacity  
+- `bathrooms`, `bedrooms`, `beds` — Structural features  
+- `price` — Nightly price  
 
-Number of Bedrooms and Bathrooms
+### Reviews Dataset (`reviews.csv`)
+Contains review-related metrics:
 
-Number of Beds
+- `id` — Property identifier  
+- `number_of_reviews` — Total review count  
+- `review_scores_rating` — Average rating score  
 
-Review Scores Rating
+---
 
-Number of Reviews
+## 🛠️ Technical Approach
 
-Room Type
+### 1️⃣ Data Loading & Inspection
 
-Neighbourhood
+- Loaded both datasets using `pandas`
+- Validated structure using `.head()` and `.info()`
 
-Statistical techniques were applied to:
+---
 
-Validate data integrity
+### 2️⃣ Data Integration
 
-Detect extreme values
+- Performed an **inner join** using `id` as the key
+- Ensured only valid, matched records remained
 
-Stabilize price distribution
+---
 
-Prepare categorical variables for modeling
+### 3️⃣ Missing Value Validation
 
-🛠️ Technical Approach & Methodology
-1️⃣ Data Collection & Integration
+- Checked missing values using `df.isnull().sum()`
+- Confirmed no null values remained after merge
 
-Two datasets were merged:
+---
 
-Listings dataset (property characteristics)
+### 4️⃣ Outlier Detection & Treatment (IQR Method)
 
-Reviews dataset (guest evaluation metrics)
+- Visualized price distribution using boxplots
+- Calculated Q1, Q3, and Interquartile Range (IQR)
+- Defined lower and upper bounds
+- Removed extreme values outside acceptable range
 
-An inner join was performed using the property ID to ensure consistency across records.
+This step reduced variance distortion and improved statistical stability.
 
-2️⃣ Data Validation & Missing Values
+---
 
-Verified dataset integrity using df.isnull().sum()
+### 5️⃣ Categorical Encoding
 
-Confirmed absence of missing values
-
-Validated data types using df.info()
-
-3️⃣ Outlier Detection & Treatment
-
-The price variable showed strong right-skewness and extreme values.
-
-To stabilize the dataset:
-
-Generated boxplots for visual inspection
-
-Applied the Interquartile Range (IQR) method
-
-Defined lower and upper acceptable bounds
-
-Removed values outside statistical limits
-
-This step reduced dispersion and improved suitability for modeling.
-
-4️⃣ Categorical Variable Encoding
-
-Categorical features were transformed using:
-
-.astype('category').cat.codes
-
+Converted categorical variables into numeric codes using:
 
 Encoded variables:
 
-room_type
+- `room_type`
+- `neighbourhood_cleansed`
 
-neighbourhood_cleansed
+This transformation prepares the dataset for regression or machine learning models.
 
-This transformation allows integration into regression or machine learning models.
+---
 
-5️⃣ Final Dataset Validation
+### 6️⃣ Final Dataset Validation
 
-After preprocessing:
+- Verified structure with `df.info()`
+- Confirmed statistical consistency with `df.describe()`
+- Ensured dataset readiness for modeling
 
-No missing values remain
+---
 
-Outliers were treated
+## 📈 Key Insights
 
-Categorical variables encoded
+- Entire home listings tend to command higher average prices.
+- Location significantly impacts price variability.
+- Guest capacity shows positive correlation with price.
+- Ratings have moderate influence compared to structural features.
+- Outlier removal improved price distribution symmetry.
 
-Dataset ready for exploratory analysis and modeling
+---
 
-📊 Key Insights
+## 🧠 Skills Demonstrated
 
-Entire home listings show significantly higher average prices.
+- Data Cleaning
+- Dataset Merging
+- Outlier Detection (IQR)
+- Categorical Feature Encoding
+- Exploratory Data Analysis (EDA)
+- Statistical Interpretation
 
-Location plays a strong role in price variability.
+---
 
-Accommodation capacity positively correlates with price.
+## 🧰 Tools & Technologies
 
-Review scores show moderate correlation compared to structural features.
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Jupyter Notebook  
 
-Outlier removal reduced price variance and improved distribution symmetry.
-
-🧠 Skills Demonstrated
-
-Data Cleaning
-
-Data Merging
-
-Exploratory Data Analysis (EDA)
-
-Outlier Detection (IQR Method)
-
-Feature Engineering
-
-Categorical Encoding
-
-Statistical Interpretation
-
-🛠️ Tools & Technologies
-
-Python
-
-Pandas
-
-NumPy
-
-Matplotlib
-
-Jupyter Notebook
